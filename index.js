@@ -19,7 +19,7 @@ admin.initializeApp({
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@dream.gcatzqm.mongodb.net/?appName=Dream`;
 
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+// Create a MongoClient with  MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -47,7 +47,7 @@ const tooken = async (req, res, next) => {
 
 async function run() {
   try {
-    // await client.connect();    commit form mongo --1
+    // await client.connect();    commit form mongo ---1
     const db = client.db("AI_Model");
     const modelCollection = db.collection("model");
     const purchaseCollection = db.collection("purchase");
