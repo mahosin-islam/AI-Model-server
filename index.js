@@ -8,7 +8,7 @@ const serviceAccount = require("./ai-model-firebase-key.json");
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const port = process.env.port || 4000;
 
-//madel-ware
+//madel-ware //
 dotenv.config();
 app.use(cors());
 app.use(express.json());
@@ -52,7 +52,7 @@ async function run() {
     const modelCollection = db.collection("model");
     const purchaseCollection = db.collection("purchase");
 
-    // get API
+    // get API sectin
 
     app.get("/", (req, res) => {
       res.send("server all runter runign");
@@ -71,10 +71,6 @@ async function run() {
         .toArray(); //  asc or desc
       res.send(result);
     });
-
-
-
-
 
     app.get("/model/:id", async (req, res) => {
       const id = req.params.id;
