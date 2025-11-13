@@ -55,7 +55,7 @@ async function run() {
     // get API
 
     app.get("/", (req, res) => {
-      res.send("server is runing");
+      res.send("server AI mode runing");
     });
     app.get("/model", async (req, res) => {
       const result = await modelCollection.find().toArray();
