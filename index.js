@@ -55,21 +55,27 @@ async function run() {
     // get API
 
     app.get("/", (req, res) => {
-      res.send("server is running");
+      res.send("server is runing");
     });
     app.get("/model", async (req, res) => {
       const result = await modelCollection.find().toArray();
       res.send(result);
     });
 
+
     app.get("/Lates-model", async (req, res) => {
       const result = await modelCollection
         .find()
-        .sort({ createdAt: "asc" })
+        .sort({ createdAt: -1 })
         .limit(6)
         .toArray(); //  asc or desc
       res.send(result);
     });
+
+
+
+
+
     app.get("/model/:id", async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
