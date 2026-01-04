@@ -67,7 +67,7 @@ async function run() {
       const result = await modelCollection
         .find()
         .sort({ createdAt: -1 })
-        .limit(6)
+        .limit(8)
         .toArray(); //  asc or desc
       res.send(result);
     });
